@@ -35,7 +35,7 @@
 
     <title>Galata İstanbul Oteli | Galata, Beyoğlu'nda Lüks Butik Otel | Resmi Site</title>
 
-    <!-- Favicon (SVG olarak gömülü, değişiklik gerekmez) -->
+    <!-- Favicon -->
     <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'><rect width='64' height='64' rx='32' fill='%23c9a96e'/><text x='32' y='44' text-anchor='middle' font-size='32' fill='%230d1b2a'>👑</text></svg>">
     <link rel="apple-touch-icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'><rect width='64' height='64' rx='16' fill='%23c9a96e'/><text x='32' y='44' text-anchor='middle' font-size='32' fill='%230d1b2a'>👑</text></svg>">
 
@@ -43,7 +43,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;0,800;1,400;1,500&family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400&family=Inter:wght@300;400;500;600;700&family=Lato:wght@300;400;700&family=Noto+Naskh+Arabic:wght@400;600;700&family=Vazirmatn:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 
-    <!-- Structured Data (Hotel Schema) olduğu gibi kaldı, görseller harici URL içermiyor -->
+    <!-- Structured Data: Hotel Schema (Turkish) -->
     <script type="application/ld+json">
         {
             "@context": "https://schema.org",
@@ -85,19 +85,238 @@
         }
     </script>
 
-    <!-- Stil aynen korundu, sadece görsel yolları değişti -->
     <style>
-        /* ... (tüm CSS aynı, burada kısaltıldı) ... */
+        /* ========================================
+           CSS CUSTOM PROPERTIES
+           ======================================== */
         :root {
             --gold: #c9a96e;
             --gold-light: #d4af37;
-            /* ... diğer değişkenler ... */
+            --gold-dark: #a6842c;
+            --gold-pale: #f5ecd7;
+            --gold-glow: #e8d5a3;
+            --navy: #0d1b2a;
+            --navy-light: #1b2d45;
+            --navy-dark: #060f1a;
+            --navy-mid: #112240;
+            --cream: #faf7f2;
+            --cream-dark: #f0ece4;
+            --white: #ffffff;
+            --text-dark: #1a1a1a;
+            --text-medium: #4a4a4a;
+            --text-light: #7a7a7a;
+            --whatsapp: #25D366;
+            --whatsapp-dark: #1da851;
+            --shadow-xs: 0 1px 4px rgba(0, 0, 0, 0.04);
+            --shadow-sm: 0 2px 12px rgba(0, 0, 0, 0.06);
+            --shadow-md: 0 8px 32px rgba(0, 0, 0, 0.10);
+            --shadow-lg: 0 20px 60px rgba(0, 0, 0, 0.15);
+            --shadow-xl: 0 30px 80px rgba(0, 0, 0, 0.20);
+            --shadow-gold: 0 8px 32px rgba(201, 169, 110, 0.30);
+            --shadow-gold-lg: 0 16px 48px rgba(201, 169, 110, 0.35);
+            --border-subtle: 1px solid rgba(0, 0, 0, 0.06);
+            --border-gold: 1px solid rgba(201, 169, 110, 0.35);
+            --radius-sm: 10px;
+            --radius-md: 16px;
+            --radius-lg: 20px;
+            --radius-xl: 28px;
+            --radius-full: 9999px;
+            --transition-fast: 0.25s cubic-bezier(0.4, 0, 0.2, 1);
+            --transition-smooth: 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+            --transition-slow: 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+            --font-display: 'Playfair Display', 'Cormorant Garamond', Georgia, 'Times New Roman', serif;
+            --font-body: 'Lato', 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+            --navbar-height: 76px;
+            --container-max: 1300px;
+            --section-padding: clamp(3rem, 6vw, 6rem);
         }
-        /* (CSS kodunun tamamı bir önceki Türkçe sürümle aynıdır, burada yer kazanmak için atlanmıştır) */
+
+        *,
+        *::before,
+        *::after { margin:0; padding:0; box-sizing:border-box; }
+        html { scroll-behavior:smooth; scroll-padding-top:calc(var(--navbar-height) + 20px); font-size:16px; -webkit-text-size-adjust:100%; }
+        body {
+            font-family:var(--font-body); background:var(--cream); color:var(--text-dark);
+            line-height:1.75; overflow-x:hidden; -webkit-font-smoothing:antialiased;
+            -moz-osx-font-smoothing:grayscale; text-rendering:optimizeLegibility;
+        }
+        ::-webkit-scrollbar { width:8px; }
+        ::-webkit-scrollbar-track { background:#f0ece4; border-radius:20px; }
+        ::-webkit-scrollbar-thumb { background:var(--gold); border-radius:20px; }
+        ::-webkit-scrollbar-thumb:hover { background:var(--gold-dark); }
+        ::selection { background:var(--gold-pale); color:var(--navy); }
+        img { display:block; max-width:100%; height:auto; }
+        a { color:inherit; text-decoration:none; }
+        ul { list-style:none; }
+        button { cursor:pointer; border:none; background:none; font-family:inherit; }
+        input { font-family:inherit; }
+        :focus-visible { outline:2px solid var(--gold-light); outline-offset:3px; border-radius:4px; }
+
+        .skip-to-content {
+            position:fixed; top:-100px; left:50%; transform:translateX(-50%);
+            background:var(--gold-light); color:var(--navy-dark); padding:12px 24px;
+            border-radius:0 0 var(--radius-md) var(--radius-md); font-weight:700; font-size:0.9rem;
+            z-index:10000; transition:top 0.3s ease; text-transform:uppercase; letter-spacing:0.05em;
+        }
+        .skip-to-content:focus { top:0; }
+
+        /* NAVBAR */
+        .navbar {
+            position:fixed; top:0; left:0; width:100%; z-index:1000;
+            background:rgba(13,27,42,0.85); backdrop-filter:blur(28px);
+            -webkit-backdrop-filter:blur(28px); border-bottom:1px solid rgba(201,169,110,0.18);
+            padding:0 clamp(1rem,3vw,2.5rem); transition:all var(--transition-smooth);
+        }
+        .navbar.scrolled { background:rgba(13,27,42,0.95); box-shadow:0 4px 30px rgba(0,0,0,0.35); border-bottom-color:rgba(201,169,110,0.35); }
+        .navbar-inner { max-width:var(--container-max); margin:0 auto; display:flex; align-items:center; justify-content:space-between; height:var(--navbar-height); }
+        .nav-logo { font-family:var(--font-display); font-size:1.5rem; font-weight:700; color:var(--white); text-decoration:none; display:flex; align-items:center; gap:10px; letter-spacing:-0.01em; transition:opacity var(--transition-fast); z-index:1001; }
+        .nav-logo:hover { opacity:0.85; }
+        .nav-logo-icon { width:44px; height:44px; border-radius:50%; background:linear-gradient(135deg, var(--gold-light), var(--gold-dark)); display:flex; align-items:center; justify-content:center; font-size:1.1rem; color:var(--navy-dark); flex-shrink:0; box-shadow:0 4px 16px rgba(201,169,110,0.3); }
+        .nav-links { display:flex; list-style:none; gap:1.6rem; align-items:center; }
+        .nav-links a { text-decoration:none; color:rgba(255,255,255,0.82); font-weight:500; font-size:0.85rem; letter-spacing:0.05em; text-transform:uppercase; position:relative; padding:6px 0; transition:color var(--transition-fast); white-space:nowrap; }
+        .nav-links a::after { content:''; position:absolute; bottom:-2px; left:0; width:0; height:2px; background:var(--gold-light); border-radius:2px; transition:width var(--transition-smooth); }
+        .nav-links a:hover, .nav-links a:focus-visible { color:var(--gold-light); }
+        .nav-links a:hover::after, .nav-links a:focus-visible::after { width:100%; }
+        .nav-book-btn {
+            background:linear-gradient(135deg, var(--gold-light), var(--gold-dark));
+            color:var(--navy-dark)!important; padding:11px 24px!important; border-radius:var(--radius-full);
+            font-weight:700!important; box-shadow:var(--shadow-gold); font-size:0.82rem!important;
+            text-transform:uppercase; letter-spacing:0.06em!important; transition:all var(--transition-fast)!important;
+            display:inline-flex; align-items:center; gap:7px;
+        }
+        .nav-book-btn:hover { transform:translateY(-2px); box-shadow:var(--shadow-gold-lg); }
+        .nav-book-btn::after { display:none!important; }
+
+        .hamburger { display:none; flex-direction:column; gap:5px; cursor:pointer; z-index:1001; padding:8px; border-radius:8px; transition:background var(--transition-fast); }
+        .hamburger:hover { background:rgba(255,255,255,0.05); }
+        .hamburger span { width:26px; height:2.5px; background:var(--white); border-radius:4px; transition:all var(--transition-smooth); display:block; }
+        .hamburger.active span:nth-child(1) { transform:translateY(7.5px) rotate(45deg); }
+        .hamburger.active span:nth-child(2) { opacity:0; transform:scaleX(0); }
+        .hamburger.active span:nth-child(3) { transform:translateY(-7.5px) rotate(-45deg); }
+
+        .mobile-menu-overlay { display:none; position:fixed; inset:0; background:rgba(6,15,26,0.7); z-index:998; opacity:0; transition:opacity var(--transition-smooth); }
+        .mobile-menu-overlay.active { display:block; opacity:1; }
+
+        /* HERO */
+        .hero { position:relative; min-height:100vh; display:flex; align-items:center; justify-content:center; overflow:hidden; background:var(--navy-dark); }
+        .hero-bg { position:absolute; inset:0; z-index:0; }
+        .hero-bg img { width:100%; height:100%; object-fit:cover; opacity:0.4; filter:brightness(0.5) saturate(1.1); animation:heroZoom 20s ease-in-out infinite alternate; will-change:transform; }
+        @keyframes heroZoom { 0% { transform:scale(1); } 100% { transform:scale(1.08); } }
+        .hero-overlay { position:absolute; inset:0; z-index:1; background:linear-gradient(180deg, rgba(6,15,26,0.5) 0%, rgba(13,27,42,0.65) 35%, rgba(6,15,26,0.88) 100%); }
+        .hero-content { position:relative; z-index:2; text-align:center; padding:2rem; max-width:880px; animation:fadeInUp 1s var(--transition-smooth) forwards; }
+        @keyframes fadeInUp { from { opacity:0; transform:translateY(30px); } to { opacity:1; transform:translateY(0); } }
+        .hero-badge { display:inline-block; padding:9px 24px; border:1.5px solid var(--gold-light); border-radius:var(--radius-full); color:var(--gold-light); font-size:0.78rem; letter-spacing:0.14em; text-transform:uppercase; margin-bottom:2rem; backdrop-filter:blur(4px); background:rgba(201,169,110,0.06); }
+        .hero-title { font-family:var(--font-display); font-size:clamp(2.8rem,6vw,5.5rem); font-weight:700; color:var(--white); line-height:1.1; margin-bottom:1rem; }
+        .hero-title .gold-accent { color:var(--gold-light); font-style:italic; }
+        .hero-subtitle { color:rgba(255,255,255,0.72); margin-bottom:2.8rem; font-size:clamp(1rem,1.6vw,1.2rem); max-width:600px; margin-left:auto; margin-right:auto; line-height:1.6; }
+        .btn { display:inline-flex; align-items:center; gap:10px; padding:15px 34px; border-radius:var(--radius-full); font-weight:600; text-decoration:none; transition:all var(--transition-fast); text-transform:uppercase; letter-spacing:0.05em; font-size:0.88rem; cursor:pointer; position:relative; overflow:hidden; }
+        .btn-primary { background:linear-gradient(135deg, var(--gold-light), var(--gold-dark)); color:var(--navy-dark); box-shadow:var(--shadow-gold); font-weight:700; }
+        .btn-primary:hover { transform:translateY(-3px); box-shadow:var(--shadow-gold-lg); }
+        .btn-outline { background:transparent; color:var(--white); border:2px solid rgba(255,255,255,0.5); backdrop-filter:blur(4px); }
+        .btn-outline:hover { border-color:var(--white); background:rgba(255,255,255,0.08); transform:translateY(-3px); }
+        .hero-cta-row { display:flex; gap:14px; flex-wrap:wrap; justify-content:center; }
+        .scroll-indicator { position:absolute; bottom:32px; left:50%; transform:translateX(-50%); z-index:3; display:flex; flex-direction:column; align-items:center; gap:8px; color:rgba(255,255,255,0.6); font-size:0.7rem; letter-spacing:0.1em; text-transform:uppercase; animation:bounceDown 2s ease-in-out infinite; }
+        .scroll-indicator .mouse { width:24px; height:38px; border:2px solid rgba(255,255,255,0.5); border-radius:14px; position:relative; }
+        .scroll-indicator .mouse::after { content:''; width:4px; height:8px; background:var(--gold-light); border-radius:4px; position:absolute; top:8px; left:50%; transform:translateX(-50%); animation:scrollWheel 1.6s ease-in-out infinite; }
+        @keyframes bounceDown { 0%,100% { transform:translateX(-50%) translateY(0); } 50% { transform:translateX(-50%) translateY(10px); } }
+        @keyframes scrollWheel { 0%,100% { opacity:1; top:8px; } 50% { opacity:0.3; top:20px; } }
+
+        /* SECTIONS */
+        .section { padding:var(--section-padding) clamp(1.5rem,4vw,2.5rem); }
+        .section-inner { max-width:var(--container-max); margin:0 auto; }
+        .section-header { text-align:center; margin-bottom:3.5rem; }
+        .section-tag { display:inline-block; color:var(--gold-dark); text-transform:uppercase; font-size:0.78rem; letter-spacing:0.12em; font-weight:600; margin-bottom:0.8rem; }
+        .section-title { font-family:var(--font-display); font-size:clamp(2rem,4vw,2.8rem); font-weight:700; color:var(--navy); line-height:1.2; margin-bottom:0.8rem; }
+        .section-subtitle { color:var(--text-medium); font-size:1.05rem; max-width:650px; margin:0 auto; line-height:1.6; }
+
+        .reveal { opacity:0; transform:translateY(40px); transition:opacity 0.7s ease, transform 0.7s var(--transition-smooth); }
+        .reveal.visible { opacity:1; transform:translateY(0); }
+
+        .about-grid { display:grid; grid-template-columns:1fr 1fr; gap:clamp(2rem,5vw,4rem); align-items:center; }
+        .about-image-wrapper { position:relative; border-radius:var(--radius-xl); overflow:hidden; box-shadow:var(--shadow-xl); }
+        .about-image-wrapper img { width:100%; height:100%; object-fit:cover; aspect-ratio:4/3; transition:transform var(--transition-slow); }
+        .about-image-wrapper:hover img { transform:scale(1.04); }
+        .about-image-badge { position:absolute; bottom:20px; right:20px; background:var(--navy); color:var(--gold-light); padding:10px 18px; border-radius:var(--radius-full); font-weight:700; font-size:0.85rem; letter-spacing:0.04em; box-shadow:var(--shadow-lg); }
+        .about-features { display:flex; flex-wrap:wrap; gap:12px; margin-top:1.5rem; }
+        .about-feature-chip { display:inline-flex; align-items:center; gap:6px; padding:8px 16px; background:var(--white); border-radius:var(--radius-full); font-size:0.85rem; font-weight:500; color:var(--navy); box-shadow:var(--shadow-xs); border:var(--border-subtle); }
+        .about-feature-chip i { color:var(--gold); font-size:0.8rem; }
+
+        .stats-section { background:var(--navy); padding:3.5rem clamp(1.5rem,4vw,2.5rem); }
+        .stats-grid { display:grid; grid-template-columns:repeat(4,1fr); gap:2rem; max-width:var(--container-max); margin:0 auto; text-align:center; }
+        .stat-number { font-family:var(--font-display); font-size:clamp(2.2rem,4vw,3.2rem); font-weight:700; color:var(--gold-light); line-height:1; }
+        .stat-label { color:rgba(255,255,255,0.7); font-size:0.9rem; text-transform:uppercase; margin-top:0.4rem; }
+
+        .rooms-grid { display:grid; grid-template-columns:repeat(auto-fill, minmax(340px,1fr)); gap:2rem; }
+        .room-card { background:var(--white); border-radius:var(--radius-lg); overflow:hidden; box-shadow:var(--shadow-sm); transition:all var(--transition-smooth); }
+        .room-card:hover { transform:translateY(-8px); box-shadow:var(--shadow-xl); }
+        .room-card-image { height:260px; overflow:hidden; cursor:pointer; position:relative; }
+        .room-card-image img { width:100%; height:100%; object-fit:cover; transition:transform 0.7s ease; }
+        .room-card:hover .room-card-image img { transform:scale(1.1); }
+        .room-card-badge { position:absolute; top:14px; left:14px; background:var(--navy); color:var(--gold-light); padding:6px 14px; border-radius:var(--radius-full); font-size:0.72rem; font-weight:700; text-transform:uppercase; z-index:2; }
+        .room-card-body { padding:1.6rem; }
+        .room-card-title { font-family:var(--font-display); font-size:1.2rem; color:var(--navy); }
+        .room-card-price { font-family:var(--font-display); font-weight:700; }
+        .room-card-book { background:var(--whatsapp); color:white; border-radius:var(--radius-full); padding:12px 22px; display:inline-flex; align-items:center; gap:7px; font-weight:700; transition:all var(--transition-fast); }
+        .room-card-book:hover { background:var(--whatsapp-dark); transform:translateY(-2px); }
+
+        .common-grid { display:grid; grid-template-columns:repeat(auto-fit, minmax(280px,1fr)); gap:1.5rem; }
+        .common-card { border-radius:var(--radius-lg); overflow:hidden; height:300px; position:relative; cursor:pointer; }
+        .common-card img { width:100%; height:100%; object-fit:cover; transition:transform 0.7s; }
+        .common-card:hover img { transform:scale(1.06); }
+        .common-card-overlay { position:absolute; inset:0; background:linear-gradient(180deg, transparent 35%, rgba(6,15,26,0.9) 100%); display:flex; flex-direction:column; justify-content:flex-end; padding:1.8rem; color:white; }
+
+        .services-grid { display:grid; grid-template-columns:repeat(auto-fit, minmax(200px,1fr)); gap:2rem; text-align:center; }
+        .service-card { background:var(--white); padding:2.2rem 1.5rem; border-radius:var(--radius-lg); transition:all var(--transition-smooth); }
+        .service-card:hover { transform:translateY(-6px); box-shadow:var(--shadow-lg); }
+        .service-icon { font-size:2.2rem; color:var(--gold); margin-bottom:1rem; }
+
+        .testimonials-grid { display:grid; grid-template-columns:repeat(auto-fit, minmax(300px,1fr)); gap:2rem; }
+        .testimonial-card { background:var(--white); padding:2rem; border-radius:var(--radius-lg); }
+        .testimonial-stars { color:var(--gold-light); }
+
+        .contact-wrapper { display:grid; grid-template-columns:1fr 1fr; gap:2.5rem; }
+        .contact-info { background:var(--white); padding:2.5rem; border-radius:var(--radius-lg); }
+        .contact-map { border-radius:var(--radius-lg); overflow:hidden; min-height:280px; }
+
+        .newsletter-section { background:var(--navy); padding:4rem clamp(1.5rem,4vw,2.5rem); text-align:center; color:white; }
+        .newsletter-form { display:flex; gap:10px; justify-content:center; flex-wrap:wrap; }
+        .newsletter-form input { padding:14px 20px; border-radius:var(--radius-full); border:2px solid rgba(255,255,255,0.25); background:rgba(255,255,255,0.06); color:white; }
+        .btn-subscribe { background:var(--gold-light); color:var(--navy-dark); font-weight:700; border-radius:var(--radius-full); padding:14px 28px; cursor:pointer; }
+
+        .site-footer { background:var(--navy-dark); color:rgba(255,255,255,0.75); padding:3rem clamp(1.5rem,4vw,2.5rem) 2rem; }
+        .footer-grid { display:grid; grid-template-columns:repeat(auto-fit, minmax(200px,1fr)); gap:2.5rem; }
+        .footer-social a { width:40px; height:40px; border-radius:50%; border:1px solid rgba(255,255,255,0.25); display:flex; align-items:center; justify-content:center; color:rgba(255,255,255,0.7); transition:all var(--transition-fast); }
+        .footer-social a:hover { border-color:var(--gold-light); color:var(--gold-light); }
+
+        .floating-whatsapp { position:fixed; bottom:28px; right:28px; z-index:999; width:60px; height:60px; background:var(--whatsapp); border-radius:50%; display:flex; align-items:center; justify-content:center; color:white; font-size:1.7rem; box-shadow:0 8px 30px rgba(37,211,102,0.5); animation:pulseWa 2.5s infinite; }
+        @keyframes pulseWa { 0%,100% { box-shadow:0 8px 30px rgba(37,211,102,0.5); } 50% { box-shadow:0 8px 50px rgba(37,211,102,0.7), 0 0 0 16px rgba(37,211,102,0.08); } }
+        .back-to-top { position:fixed; bottom:100px; right:28px; width:44px; height:44px; background:var(--navy); border-radius:50%; color:var(--gold-light); display:flex; align-items:center; justify-content:center; opacity:0; pointer-events:none; transition:all var(--transition-smooth); }
+        .back-to-top.visible { opacity:1; pointer-events:all; }
+
+        .cookie-banner { position:fixed; bottom:0; left:0; right:0; background:var(--white); z-index:3000; padding:1rem 2rem; display:flex; justify-content:center; gap:1.5rem; transform:translateY(100%); transition:transform var(--transition-smooth); }
+        .cookie-banner.active { transform:translateY(0); }
+        .cookie-accept-btn { padding:10px 24px; background:var(--navy); color:white; border-radius:var(--radius-full); cursor:pointer; }
+
+        .lightbox { position:fixed; inset:0; background:rgba(0,0,0,0.94); display:flex; align-items:center; justify-content:center; opacity:0; pointer-events:none; z-index:2000; }
+        .lightbox.active { opacity:1; pointer-events:all; }
+        .lightbox img { max-width:92vw; max-height:88vh; border-radius:12px; }
+        .lightbox-close { position:absolute; top:22px; right:28px; color:white; font-size:2.5rem; cursor:pointer; }
+
+        @media (max-width:1024px) {
+            .about-grid { grid-template-columns:1fr; }
+            .contact-wrapper { grid-template-columns:1fr; }
+        }
+        @media (max-width:768px) {
+            .nav-links { position:fixed; top:0; right:-320px; width:300px; height:100vh; background:var(--navy-dark); flex-direction:column; padding:100px 2rem 2rem; transition:right var(--transition-smooth); z-index:999; }
+            .nav-links.active { right:0; }
+            .hamburger { display:flex; }
+            .rooms-grid { grid-template-columns:1fr; max-width:500px; margin:0 auto; }
+            .hero-cta-row { flex-direction:column; align-items:center; }
+            .btn { width:100%; max-width:300px; justify-content:center; }
+        }
     </style>
 </head>
 <body>
-    <!-- Ana İçeriğe Geç -->
     <a href="#main-content" class="skip-to-content">Ana İçeriğe Geç</a>
 
     <nav class="navbar" id="navbar" role="navigation" aria-label="Ana navigasyon">
@@ -123,51 +342,34 @@
     <div class="mobile-menu-overlay" id="mobileMenuOverlay"></div>
 
     <main id="main-content">
-        <!-- HERO -->
         <section class="hero" id="home" aria-labelledby="hero-heading">
             <div class="hero-bg">
-                <!-- GÖRSEL DEĞİŞTİ: lokal dosya -->
-                <img src="assets/images/hero-bosphorus.jpg"
-                alt="İstanbul silüetinin ve Boğaz'ın altın saatte panoramik görünümü"
-                fetchpriority="high"
-                width="1920"
-                height="1080">
+                <img src="assets/images/hero-bosphorus.jpg" alt="İstanbul silüetinin ve Boğaz'ın altın saatte panoramik görünümü" fetchpriority="high" width="1920" height="1080">
             </div>
             <div class="hero-overlay"></div>
             <div class="hero-content">
                 <div class="hero-badge">✧ Butik Lüks Otel ✧</div>
-                <h1 id="hero-heading" class="hero-title">
-                    <span class="gold-accent">Galata</span> İstanbul <span class="gold-accent">Oteli</span>
-                </h1>
+                <h1 id="hero-heading" class="hero-title"><span class="gold-accent">Galata</span> İstanbul <span class="gold-accent">Oteli</span></h1>
                 <p class="hero-subtitle">Zamansız Osmanlı zarafeti ile çağdaş lüksün buluştuğu mekan. Tarihi Galata'nın kalbinden nefes kesen Boğaz manzaraları.</p>
                 <div class="hero-cta-row">
                     <a href="#rooms" class="btn btn-primary">Odaları Keşfedin</a>
-                    <a href="#" class="btn btn-outline" id="heroWhatsapp" aria-label="WhatsApp ile Rezervasyon"><i class="fa-brands fa-whatsapp" aria-hidden="true"></i> WhatsApp Rezervasyon</a>
+                    <a href="#" class="btn btn-outline" id="heroWhatsapp"><i class="fa-brands fa-whatsapp"></i> WhatsApp Rezervasyon</a>
                 </div>
             </div>
-            <div class="scroll-indicator" aria-hidden="true">
-                <div class="mouse"></div>
-                <span>Kaydır</span>
-            </div>
+            <div class="scroll-indicator" aria-hidden="true"><div class="mouse"></div><span>Kaydır</span></div>
         </section>
 
-        <!-- HAKKIMIZDA -->
         <section class="section reveal" id="about" aria-labelledby="about-heading">
             <div class="section-inner">
                 <div class="about-grid">
                     <div class="about-image-wrapper">
-                        <!-- GÖRSEL DEĞİŞTİ: lokal dosya -->
-                        <img src="assets/images/hotel-exterior.jpg"
-                        alt="Galata İstanbul Oteli'nin geleneksel Osmanlı mimari detaylarıyla zarif dış cephesi"
-                        loading="lazy"
-                        width="800"
-                        height="600">
+                        <img src="assets/images/hotel-exterior.jpg" alt="Galata İstanbul Oteli'nin geleneksel Osmanlı mimari detaylarıyla zarif dış cephesi" loading="lazy" width="800" height="600">
                         <div class="about-image-badge">⭐ 5 Yıldızlı Lüks</div>
                     </div>
                     <div class="about-text">
                         <span class="section-tag">Hakkımızda</span>
                         <h2 id="about-heading" class="section-title">Zarafet ve Mirasın Hikayesi</h2>
-                        <p>Galata'nın canlı semtinde konumlanan otelimiz, İstanbul'un zengin kültürel dokusunu dünya standartlarında misafirperverlikle buluşturuyor. Her köşe bir hikaye anlatıyor — özenle seçilmiş Osmanlı esintili dekorasyonumuzdan, Boğaz silüetine dokunan panoramik rooftop'umuza kadar.</p>
+                        <p>Galata'nın canlı semtinde konumlanan otelimiz, İstanbul'un zengin kültürel dokusunu dünya standartlarında misafirperverlikle buluşturuyor.</p>
                         <p>İkonik Galata Kulesi'ne sadece birkaç adım mesafede, özgünlük, konfor ve zamansız güzellik arayan seçkin gezginler için eşsiz bir konum sunuyoruz.</p>
                         <div class="about-features">
                             <span class="about-feature-chip"><i class="fa-solid fa-check-circle"></i> Boğaz Manzaraları</span>
@@ -180,135 +382,256 @@
             </div>
         </section>
 
-        <!-- İSTATİSTİKLER -->
         <section class="stats-section reveal" aria-label="Otel istatistikleri">
-            <!-- (sayaçlar aynı, görsel yok) -->
+            <div class="stats-grid">
+                <div class="stat-item"><div class="stat-number" data-count="12">0</div><div class="stat-label">Yıllık Deneyim</div></div>
+                <div class="stat-item"><div class="stat-number" data-count="10">0</div><div class="stat-label">Oda Tipi</div></div>
+                <div class="stat-item"><div class="stat-number" data-count="5000">0</div><div class="stat-label">Mutlu Misafir</div></div>
+                <div class="stat-item"><div class="stat-number" data-count="8">0</div><div class="stat-label">Ödül</div></div>
+            </div>
         </section>
 
-        <!-- ODALAR -->
         <section class="section reveal" id="rooms" aria-labelledby="rooms-heading">
             <div class="section-inner">
                 <div class="section-header">
                     <span class="section-tag">Konaklama</span>
-                    <h2 id="rooms-heading" class="section-title">İstanbul'un Kalbinde Konfor & Zarafet</h2>
-                    <p class="section-subtitle">Galata İstanbul Oteli'nde, yalnız seyahat edenlerden ailelere ve iş misafirlerine kadar herkesin ihtiyacına özel tasarlanmış, zarif odalarımızı keşfedin.</p>
+                    <h2 class="section-title">İstanbul'un Kalbinde Konfor & Zarafet</h2>
                 </div>
                 <div class="rooms-grid" id="roomsContainer"></div>
             </div>
         </section>
 
-        <!-- ORTAK ALANLAR -->
         <section class="section reveal" id="common-areas" style="background:var(--navy);" aria-labelledby="gallery-heading">
             <div class="section-inner">
                 <div class="section-header">
                     <span class="section-tag" style="color:var(--gold-light);">Galeri</span>
-                    <h2 id="gallery-heading" class="section-title" style="color:white;">Ortak Alanlar & Manzaralar</h2>
-                    <p style="color:rgba(255,255,255,0.7);">Rooftop'umuzdan nefes kesen manzaraları deneyimleyin. Sabah kahvenizin, akşam kokteylinizin keyfini çıkarın ya da sadece büyüleyici İstanbul silüetini seyredin.</p>
+                    <h2 class="section-title" style="color:white;">Ortak Alanlar & Manzaralar</h2>
                 </div>
                 <div class="common-grid" id="commonContainer"></div>
             </div>
         </section>
 
-        <!-- HİZMETLER -->
         <section class="section reveal" id="services" aria-labelledby="services-heading">
-            <!-- (görsel yok) -->
+            <div class="section-inner">
+                <div class="section-header"><span class="section-tag">Olanaklar</span><h2 class="section-title">Olağanüstü Misafirperverlik</h2></div>
+                <div class="services-grid" id="servicesContainer"></div>
+            </div>
         </section>
 
-        <!-- MİSAFİR YORUMLARI -->
         <section class="section reveal" style="background:var(--cream-dark);" aria-labelledby="testimonials-heading">
-            <!-- (görsel yok) -->
+            <div class="section-inner">
+                <div class="section-header"><span class="section-tag">Misafir Yorumları</span><h2 class="section-title">Misafirlerimiz Ne Diyor?</h2></div>
+                <div class="testimonials-grid" id="testimonialsContainer"></div>
+            </div>
         </section>
 
-        <!-- İLETİŞİM -->
         <section class="section reveal" id="contact" aria-labelledby="contact-heading">
-            <!-- (harita iframe dışında görsel yok) -->
+            <div class="section-inner">
+                <div class="section-header"><span class="section-tag">Bize Ulaşın</span><h2 class="section-title">İletişim & Konum</h2></div>
+                <div class="contact-wrapper">
+                    <div class="contact-info" id="contactInfo"></div>
+                    <div class="contact-map"><iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3010.798654065458!2d28.9720!3d41.0256!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x14cab9e7a7777c43%3A0x4c76cf3dcc8b33b0!2sGalata%20Kulesi!5e0!3m2!1str!2str!4v1700000000000" title="Konum" allowfullscreen loading="lazy"></iframe></div>
+                </div>
+            </div>
         </section>
 
-        <!-- BÜLTEN -->
-        <section class="newsletter-section reveal" aria-labelledby="newsletter-heading">
-            <!-- (görsel yok) -->
+        <section class="newsletter-section reveal">
+            <div class="newsletter-inner">
+                <h3>Özel Fırsatlar & Güncellemeler</h3>
+                <p>Özel fiyatlar ve İstanbul ipuçları için abone olun.</p>
+                <form class="newsletter-form" id="newsletterForm" novalidate>
+                    <input type="email" placeholder="E-posta adresiniz" required>
+                    <button type="submit" class="btn-subscribe">Abone Ol</button>
+                </form>
+                <p class="newsletter-confirmation" id="newsletterConfirmation">✨ Teşekkürler! Listemizdesiniz.</p>
+            </div>
         </section>
     </main>
 
     <footer class="site-footer" role="contentinfo">
-        <!-- footer içeriği aynı -->
+        <div class="footer-grid">
+            <div class="footer-col"><h4>Galata İstanbul Oteli</h4><p>Lüks butik deneyim.</p><div class="footer-social"><a href="#"><i class="fa-brands fa-instagram"></i></a><a href="#"><i class="fa-brands fa-facebook-f"></i></a></div></div>
+            <div class="footer-col"><h4>Hızlı Bağlantılar</h4><ul><li><a href="#home">Ana Sayfa</a></li><li><a href="#rooms">Odalar</a></li></ul></div>
+            <div class="footer-col"><h4>İletişim</h4><ul><li>+90 54 000 27 000</li><li>info@galataistanbulhotel.com</li></ul></div>
+        </div>
+        <div class="footer-bottom"><p>© 2026 Galata İstanbul Oteli. <span class="heart">❤️</span> İstanbul. | <a href="../index.html" style="color:var(--gold-light);">English</a></p></div>
     </footer>
 
-    <!-- Sabit WhatsApp butonu -->
-    <a href="https://wa.me/905400027000?text=Merhaba!%20Galata%20%C4%B0stanbul%20Oteli'nde%20oda%20rezervasyonu%20yapt%C4%B1rmak%20istiyorum."
-    class="floating-whatsapp" id="floatingWa" target="_blank" rel="noopener noreferrer"
-    aria-label="WhatsApp'ta bizimle sohbet edin">
-    <i class="fa-brands fa-whatsapp" aria-hidden="true"></i>
-    </a>
+    <a href="https://wa.me/905400027000?text=Merhaba!%20Galata%20%C4%B0stanbul%20Oteli'nde%20oda%20rezervasyonu%20yapt%C4%B1rmak%20istiyorum." class="floating-whatsapp" target="_blank" rel="noopener" aria-label="WhatsApp"><i class="fa-brands fa-whatsapp"></i></a>
+    <button class="back-to-top" id="backToTop" aria-label="Yukarı"><i class="fa-solid fa-chevron-up"></i></button>
 
-    <button class="back-to-top" id="backToTop" aria-label="Yukarı kaydır" title="Yukarı dön">
-        <i class="fa-solid fa-chevron-up" aria-hidden="true"></i>
-    </button>
+    <div class="cookie-banner" id="cookieBanner" role="alert">
+        <span>🍪 Bu site çerez kullanır. <a href="#">Gizlilik Politikası</a></span>
+        <button class="cookie-accept-btn" id="cookieAcceptBtn">Kabul Et</button>
+    </div>
 
-    <!-- Çerez bandı, lightbox aynı -->
+    <div class="lightbox" id="lightbox" role="dialog" aria-modal="true" onclick="closeLightbox()">
+        <button class="lightbox-close" onclick="closeLightbox()" aria-label="Kapat">&times;</button>
+        <img src="" id="lightboxImg" alt="Büyütülmüş görüntü">
+    </div>
 
-    <!-- SCRIPTS (görsel yolları burada düzenlendi) -->
     <script>
-        // ... (diğer fonksiyonlar aynı) ...
-
         const roomsData = [
-            { name: "Jakuzili & Deniz Manzaralı Romantik Süit Oda",
-                desc: "Çiftler için ideal, özel jakuzili ve Boğaz üzerinde nefes kesen deniz manzaralı lüks süit.",
-                badge: "Premium", price: "€180", img: "assets/images/room-romantic-suite.jpg" },
-            { name: "Deniz Manzaralı Deluxe Çift veya İkiz Yataklı Oda",
-                desc: "Çift veya ikiz yatak seçeneğiyle, modern konforlarla donatılmış büyüleyici deniz manzaraları.",
-                badge: "Deniz Manzaralı", price: "€130", img: "assets/images/room-deluxe-sea-view.jpg" },
-            { name: "Kısmi Deniz Manzaralı Deluxe Üç Kişilik veya Çift Yataklı Oda",
-                desc: "Üç misafire kadar konaklama imkanı sunan, kısmi deniz manzaralı, farklı yatak kombinasyonlarına sahip oda.",
-                badge: "Üç Kişilik", price: "€145", img: "assets/images/room-deluxe-triple.jpg" },
-            { name: "Kısmi Deniz Manzaralı Deluxe Büyük Çift veya İkiz Yataklı Oda",
-                desc: "Kısmi deniz manzaralı, çift veya ikiz yatak seçenekli, dinlendirici bir konaklama için modern olanaklara sahip geniş oda.",
-                badge: "Geniş", price: "€140", img: "assets/images/room-deluxe-big.jpg" },
-            { name: "Business Deluxe Çift veya İkiz Yataklı Oda",
-                desc: "İş seyahatleri için ideal, çift veya ikiz yatak seçenekli, özel çalışma masası ve modern olanaklarla donatılmış oda.",
-                badge: "Business", price: "€125", img: "assets/images/room-business.jpg" },
-            { name: "Standart Aile Üç Kişilik Oda",
-                desc: "Aileler için geniş oda, çift ve tek yatak kombinasyonuyla üç misafir ağırlayabilir — konforlu bir aile tatili için ideal.",
-                badge: "Aile", price: "€135", img: "assets/images/room-family.jpg" },
-            { name: "Standart Çift veya İkiz Yataklı Oda",
-                desc: "Çift veya ikiz yatak seçeneğiyle esnek ve konforlu, huzurlu bir konaklama için tüm modern olanaklara sahip.",
-                badge: "Popüler", price: "€100", img: "assets/images/room-standard-double.jpg" },
-            { name: "Ekonomik Çift veya İkiz Yataklı Oda",
-                desc: "Çift veya ikiz yatak seçeneğiyle uygun fiyatlı konfor, kaliteden ödün vermeyen bütçe dostu gezginler için ideal.",
-                badge: "Bütçe", price: "€75", img: "assets/images/room-economy.jpg" },
-            { name: "Standart Tek Kişilik Oda",
-                desc: "Yalnız seyahat edenler için ideal, konforlu tek yatak ve huzurlu bir konaklama için gerekli tüm olanaklar.",
-                badge: "Solo", price: "€65", img: "assets/images/room-single.jpg" },
-            { name: "Standart Çift veya İkiz Yataklı Oda – Giriş Kat Kolay Erişim",
-                desc: "Çift veya ikiz yatak seçeneği ve modern olanaklarla kolay erişim ve konfor — giriş katında elverişli konumda.",
-                badge: "Kolay Erişim", price: "€95", img: "assets/images/room-ground-floor.jpg" }
+            { name:"Jakuzili & Deniz Manzaralı Romantik Süit Oda", desc:"Çiftler için ideal, özel jakuzili lüks süit.", badge:"Premium", price:"€180", img:"assets/images/room-romantic-suite.jpg" },
+            { name:"Deniz Manzaralı Deluxe Çift/İkiz Oda", desc:"Çift veya ikiz yatak, modern konfor.", badge:"Deniz Manzaralı", price:"€130", img:"assets/images/room-deluxe-sea-view.jpg" },
+            { name:"Kısmi Deniz Manzaralı Deluxe Üç Kişilik", desc:"Üç misafir, kısmi manzara.", badge:"Üç Kişilik", price:"€145", img:"assets/images/room-deluxe-triple.jpg" },
+            { name:"Deluxe Büyük Çift/İkiz Oda", desc:"Geniş oda, kısmi deniz manzaralı.", badge:"Geniş", price:"€140", img:"assets/images/room-deluxe-big.jpg" },
+            { name:"Business Deluxe Çift/İkiz Oda", desc:"Çalışma masalı, iş için ideal.", badge:"Business", price:"€125", img:"assets/images/room-business.jpg" },
+            { name:"Standart Aile Üç Kişilik", desc:"Aileler için geniş oda.", badge:"Aile", price:"€135", img:"assets/images/room-family.jpg" },
+            { name:"Standart Çift/İkiz Oda", desc:"Esnek konfor.", badge:"Popüler", price:"€100", img:"assets/images/room-standard-double.jpg" },
+            { name:"Ekonomik Çift/İkiz Oda", desc:"Bütçe dostu konfor.", badge:"Bütçe", price:"€75", img:"assets/images/room-economy.jpg" },
+            { name:"Standart Tek Kişilik", desc:"Solo gezginler için.", badge:"Solo", price:"€65", img:"assets/images/room-single.jpg" },
+            { name:"Giriş Kat Kolay Erişim", desc:"Zemin katta konfor.", badge:"Kolay Erişim", price:"€95", img:"assets/images/room-ground-floor.jpg" }
         ];
 
-        function renderCommonAreas() {
-            const container = document.getElementById('commonContainer');
-            if (!container) return;
-            const areas = [
-                { title: "🌅 Rooftop Teras",
-                    desc: "Panoramik Boğaz & Galata Kulesi manzaraları",
-                    img: "assets/images/common-rooftop.jpg" },
-                { title: "🛋️ Lobİ Lounge", desc: "Dinlenmek ve sosyalleşmek için zarif alan",
-                    img: "assets/images/common-lobby.jpg" },
-                { title: "🍽️ Kahvaltı Salonu", desc: "Her gün taze Türk ve uluslararası lezzetler",
-                    img: "assets/images/common-breakfast.jpg" }
-            ];
-            container.innerHTML = areas.map(a => `
-                <div class="common-card" onclick="openLightbox('${a.img}')" role="button" tabindex="0" aria-label="${a.title}">
-                    <img src="${a.img}" alt="${a.title} - Galata İstanbul Oteli" loading="lazy" width="600" height="400">
-                    <div class="common-card-overlay">
-                        <h3>${a.title}</h3>
-                        <p>${a.desc}</p>
+        function renderRooms() {
+            const container = document.getElementById('roomsContainer');
+            container.innerHTML = roomsData.map((room,i) => `
+                <div class="room-card reveal">
+                    <div class="room-card-image" onclick="openLightbox('${room.img}')">
+                        <img src="${room.img}" alt="${room.name}" loading="lazy">
+                        <span class="room-card-badge">${room.badge}</span>
                     </div>
+                    <div class="room-card-body">
+                        <h3 class="room-card-title">${room.name}</h3>
+                        <p>${room.desc}</p>
+                        <div style="display:flex; justify-content:space-between; align-items:center; margin-top:1rem;">
+                            <span class="room-card-price">${room.price} <small>/gecelik</small></span>
+                            <a href="#" class="room-card-book" data-idx="${i}"><i class="fa-brands fa-whatsapp"></i> Rezervasyon</a>
+                        </div>
+                    </div>
+                </div>
+            `).join('');
+            document.querySelectorAll('.room-card-book').forEach(btn => {
+                btn.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    const room = roomsData[this.dataset.idx].name;
+                    window.open(`https://wa.me/905400027000?text=${encodeURIComponent(`Merhaba, "${room}" için rezervasyon yaptırmak istiyorum.`)}`, '_blank');
+                });
+            });
+        }
+
+        function renderCommonAreas() {
+            const areas = [
+                { title:"🌅 Rooftop Teras", desc:"Panoramik Boğaz manzarası", img:"assets/images/common-rooftop.jpg" },
+                { title:"🛋️ Lobİ Lounge", desc:"Zarif dinlenme alanı", img:"assets/images/common-lobby.jpg" },
+                { title:"🍽️ Kahvaltı Salonu", desc:"Taze lezzetler", img:"assets/images/common-breakfast.jpg" }
+            ];
+            document.getElementById('commonContainer').innerHTML = areas.map(a => `
+                <div class="common-card" onclick="openLightbox('${a.img}')">
+                    <img src="${a.img}" alt="${a.title}" loading="lazy">
+                    <div class="common-card-overlay"><h3>${a.title}</h3><p>${a.desc}</p></div>
                 </div>
             `).join('');
         }
 
-        // Diğer fonksiyonlar (renderRooms, openLightbox vs.) aynı, sadece img yolları yukarıdaki verilerden geliyor.
-        // ...
+        function renderServices() {
+            const services = [
+                { icon:"fa-bell-concierge", name:"7/24 Danışma", desc:"Kişiselleştirilmiş yardım." },
+                { icon:"fa-wifi", name:"Ücretsiz WiFi", desc:"Tesis genelinde." },
+                { icon:"fa-spa", name:"Spa & Wellness", desc:"Oda içi spa." },
+                { icon:"fa-utensils", name:"Gurme Yemek", desc:"Türk mutfağı." },
+                { icon:"fa-shuttle-van", name:"Transfer", desc:"Lüks servis." },
+                { icon:"fa-key", name:"Hızlı Giriş", desc:"Sorunsuz varış." }
+            ];
+            document.getElementById('servicesContainer').innerHTML = services.map(s => `
+                <div class="service-card"><div class="service-icon"><i class="fa-solid ${s.icon}"></i></div><h4>${s.name}</h4><p>${s.desc}</p></div>
+            `).join('');
+        }
+
+        function renderTestimonials() {
+            const testimonials = [
+                { quote:"Büyüleyici bir konaklama, personel kraliyet gibi davrandı.", name:"Emma & James", origin:"Londra", initials:"EJ" },
+                { quote:"Mükemmel konum, oda kusursuzdu.", name:"Marco R.", origin:"Roma", initials:"MR" },
+                { quote:"En iyi butik otel deneyimi.", name:"Aylin K.", origin:"Berlin", initials:"AK" }
+            ];
+            document.getElementById('testimonialsContainer').innerHTML = testimonials.map(t => `
+                <div class="testimonial-card"><div class="testimonial-stars">★★★★★</div><p>"${t.quote}"</p><div><strong>${t.name}</strong><br><small>${t.origin}</small></div></div>
+            `).join('');
+        }
+
+        function renderContact() {
+            document.getElementById('contactInfo').innerHTML = `
+                <div><i class="fa-solid fa-phone"></i> <strong>Telefon:</strong> +90 54 000 27 000</div>
+                <div><i class="fa-solid fa-envelope"></i> <strong>E-posta:</strong> info@galataistanbulhotel.com</div>
+                <div><i class="fa-solid fa-location-dot"></i> <strong>Adres:</strong> Galata Mah. Bereketzade Sk. No:12, Beyoğlu, İstanbul</div>
+                <div><i class="fa-solid fa-clock"></i> <strong>Giriş/Çıkış:</strong> 14:00 / 12:00</div>
+            `;
+        }
+
+        function openLightbox(src) { document.getElementById('lightboxImg').src=src; document.getElementById('lightbox').classList.add('active'); }
+        function closeLightbox() { document.getElementById('lightbox').classList.remove('active'); }
+
+        // Mobile menu, back to top, stats counter, cookie, newsletter, WhatsApp buttons – same logic as previous full version
+        function initMobileMenu() {
+            const hamburger = document.getElementById('hamburger');
+            const navLinks = document.getElementById('navLinks');
+            const overlay = document.getElementById('mobileMenuOverlay');
+            function toggle() { navLinks.classList.toggle('active'); overlay.classList.toggle('active'); hamburger.classList.toggle('active'); }
+            hamburger.addEventListener('click', toggle);
+            overlay.addEventListener('click', toggle);
+            navLinks.querySelectorAll('a').forEach(a => a.addEventListener('click', () => { if(navLinks.classList.contains('active')) toggle(); }));
+        }
+        window.addEventListener('scroll', () => {
+            document.getElementById('backToTop').classList.toggle('visible', window.scrollY > 600);
+            document.getElementById('navbar').classList.toggle('scrolled', window.scrollY > 50);
+        });
+        document.getElementById('backToTop').addEventListener('click', () => window.scrollTo({top:0,behavior:'smooth'}));
+
+        // Stats counter
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if(entry.isIntersecting) {
+                    const el = entry.target;
+                    const target = +el.dataset.count;
+                    let current = 0;
+                    const increment = target / 60;
+                    const timer = setInterval(() => {
+                        current += increment;
+                        if(current >= target) { el.textContent = target; clearInterval(timer); }
+                        else { el.textContent = Math.ceil(current); }
+                    }, 30);
+                    observer.unobserve(el);
+                }
+            });
+        }, {threshold:0.5});
+        document.querySelectorAll('.stat-number[data-count]').forEach(el => observer.observe(el));
+
+        // Reveal on scroll
+        const revealObserver = new IntersectionObserver((entries) => {
+            entries.forEach(entry => { if(entry.isIntersecting) entry.target.classList.add('visible'); });
+        }, {threshold:0.12});
+        document.querySelectorAll('.reveal').forEach(el => revealObserver.observe(el));
+
+        // Cookie
+        if(!localStorage.getItem('cookie_consent')) {
+            setTimeout(() => document.getElementById('cookieBanner').classList.add('active'), 800);
+        }
+        document.getElementById('cookieAcceptBtn').addEventListener('click', () => {
+            localStorage.setItem('cookie_consent','1');
+            document.getElementById('cookieBanner').classList.remove('active');
+        });
+
+        // Newsletter
+        document.getElementById('newsletterForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            document.getElementById('newsletterConfirmation').style.display='block';
+            this.reset();
+            setTimeout(() => document.getElementById('newsletterConfirmation').style.display='none', 4000);
+        });
+
+        // WhatsApp buttons
+        const waMsg = 'Merhaba, Galata İstanbul Oteli hakkında bilgi almak istiyorum.';
+        document.getElementById('heroWhatsapp').addEventListener('click', e => { e.preventDefault(); window.open(`https://wa.me/905400027000?text=${encodeURIComponent(waMsg)}`); });
+        document.getElementById('navBookBtn').addEventListener('click', e => { e.preventDefault(); window.open(`https://wa.me/905400027000?text=${encodeURIComponent(waMsg)}`); });
+
+        // Initialize all
+        renderRooms();
+        renderCommonAreas();
+        renderServices();
+        renderTestimonials();
+        renderContact();
+        initMobileMenu();
     </script>
 </body>
 </html>
