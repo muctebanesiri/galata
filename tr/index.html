@@ -4,14 +4,130 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Galata İstanbul Oteli | Lüks Konaklama</title>
-    <!-- same font & CSS links as English file -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;0,800;1,400;1,500&family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400&family=Inter:wght@300;400;500;600;700&family=Lato:wght@300;400;700&family=Noto+Naskh+Arabic:wght@400;600;700&family=Vazirmatn:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <style>
-        /* Paste the ENTIRE CSS from the English file – it's identical for all languages */
-        :root { ... } *{...} body{...} /* etc. */
+        :root {
+            --gold: #c9a96e;
+            --gold-light: #d4af37;
+            --gold-dark: #a6842c;
+            --gold-pale: #f5ecd7;
+            --navy: #0d1b2a;
+            --navy-light: #1b2d45;
+            --navy-dark: #060f1a;
+            --cream: #faf7f2;
+            --white: #ffffff;
+            --text-dark: #1a1a1a;
+            --text-medium: #4a4a4a;
+            --text-light: #7a7a7a;
+            --shadow-sm: 0 2px 12px rgba(0, 0, 0, 0.06);
+            --shadow-md: 0 8px 32px rgba(0, 0, 0, 0.10);
+            --shadow-lg: 0 20px 60px rgba(0, 0, 0, 0.15);
+            --shadow-xl: 0 30px 80px rgba(0, 0, 0, 0.20);
+            --shadow-gold: 0 8px 32px rgba(201, 169, 110, 0.25);
+            --border-subtle: 1px solid rgba(0, 0, 0, 0.06);
+            --radius-lg: 20px;
+            --transition-smooth: 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+            --font-display: 'Playfair Display', 'Cormorant Garamond', Georgia, serif;
+            --font-body: 'Lato', 'Inter', -apple-system, sans-serif;
+        }
+
+        * { margin:0; padding:0; box-sizing:border-box; }
+        html { scroll-behavior:smooth; scroll-padding-top:80px; }
+        body {
+            font-family: var(--font-body);
+            background: var(--cream);
+            color: var(--text-dark);
+            line-height: 1.7;
+            overflow-x: hidden;
+            -webkit-font-smoothing: antialiased;
+        }
+        ::-webkit-scrollbar { width: 8px; }
+        ::-webkit-scrollbar-track { background: #f0ece4; }
+        ::-webkit-scrollbar-thumb { background: var(--gold); border-radius: 20px; }
+        ::selection { background: var(--gold-pale); color: var(--navy); }
+
+        .navbar {
+            position: fixed; top:0; left:0; width:100%; z-index:1000;
+            background: rgba(13,27,42,0.88); backdrop-filter: blur(24px);
+            border-bottom: 1px solid rgba(201,169,110,0.2); padding: 0 2rem;
+        }
+        .navbar-inner {
+            max-width:1300px; margin:0 auto; display:flex; align-items:center;
+            justify-content:space-between; height:76px;
+        }
+        .nav-logo {
+            font-family:var(--font-display); font-size:1.55rem; font-weight:700;
+            color:var(--white); text-decoration:none; display:flex; align-items:center; gap:10px;
+        }
+        .nav-logo-icon {
+            width:42px; height:42px; border-radius:50%;
+            background: linear-gradient(135deg, var(--gold-light), var(--gold-dark));
+            display:flex; align-items:center; justify-content:center;
+            font-size:1.1rem; color:var(--navy-dark);
+        }
+        .nav-links { display:flex; list-style:none; gap:1.8rem; align-items:center; }
+        .nav-links a {
+            text-decoration:none; color:rgba(255,255,255,0.85); font-weight:500;
+            font-size:0.88rem; letter-spacing:0.04em; text-transform:uppercase;
+            position:relative; padding:6px 0; transition:0.3s;
+        }
+        .nav-links a::after { content:''; position:absolute; bottom:0; left:0; width:0; height:1.5px; background:var(--gold-light); transition:width 0.4s; }
+        .nav-links a:hover { color:var(--gold-light); }
+        .nav-links a:hover::after { width:100%; }
+        .nav-book-btn {
+            background:linear-gradient(135deg, var(--gold-light), var(--gold-dark));
+            color:var(--navy-dark)!important; padding:10px 22px!important;
+            border-radius:50px; font-weight:700!important; box-shadow:var(--shadow-gold);
+            font-size:0.8rem!important; text-transform:uppercase;
+        }
+
+        .hero {
+            position:relative; min-height:100vh; display:flex; align-items:center;
+            justify-content:center; overflow:hidden; background:var(--navy-dark);
+        }
+        .hero-bg img { width:100%; height:100%; object-fit:cover; opacity:0.45; filter:brightness(0.55); position:absolute; inset:0; }
+        .hero-overlay { position:absolute; inset:0; background:linear-gradient(180deg, rgba(6,15,26,0.55) 0%, rgba(13,27,42,0.7) 40%, rgba(6,15,26,0.9) 100%); }
+        .hero-content { position:relative; z-index:2; text-align:center; padding:2rem; max-width:850px; }
+        .hero-badge { display:inline-block; padding:8px 22px; border:1px solid var(--gold-light); border-radius:50px; color:var(--gold-light); font-size:0.8rem; letter-spacing:0.12em; margin-bottom:2rem; }
+        .hero-title { font-family:var(--font-display); font-size:clamp(3rem, 6vw, 5.5rem); font-weight:700; color:white; line-height:1.1; }
+        .hero-title span { color:var(--gold-light); font-style:italic; }
+        .hero-subtitle { color:rgba(255,255,255,0.75); margin-bottom:2.5rem; font-size:1.1rem; }
+        .btn { display:inline-flex; align-items:center; gap:10px; padding:15px 34px; border-radius:50px; font-weight:600; text-decoration:none; transition:0.3s; text-transform:uppercase; margin:0 6px; }
+        .btn-primary { background:var(--gold-light); color:var(--navy-dark); box-shadow:var(--shadow-gold); }
+        .btn-outline { background:transparent; color:white; border:2px solid rgba(255,255,255,0.5); }
+        .section { padding:5rem 2rem; }
+        .section-inner { max-width:1300px; margin:0 auto; }
+        .section-header { text-align:center; margin-bottom:3rem; }
+        .section-title { font-family:var(--font-display); font-size:2.5rem; color:var(--navy); }
+        .about-grid { display:grid; grid-template-columns:1fr 1fr; gap:3rem; align-items:center; }
+        @media (max-width:768px){ .about-grid { grid-template-columns:1fr; } }
+        .rooms-grid { display:grid; grid-template-columns:repeat(auto-fill, minmax(350px,1fr)); gap:2rem; }
+        .room-card { background:white; border-radius:var(--radius-lg); overflow:hidden; box-shadow:var(--shadow-sm); transition:0.3s; }
+        .room-card:hover { transform:translateY(-6px); box-shadow:var(--shadow-xl); }
+        .room-card-image { height:250px; overflow:hidden; cursor:pointer; position:relative; }
+        .room-card-image img { width:100%; height:100%; object-fit:cover; transition:0.7s; }
+        .room-card:hover .room-card-image img { transform:scale(1.08); }
+        .room-card-body { padding:1.5rem; }
+        .room-card-title { font-family:var(--font-display); font-size:1.3rem; color:var(--navy); margin-bottom:0.5rem; }
+        .room-card-desc { color:var(--text-medium); margin-bottom:1rem; }
+        .room-card-book { display:inline-flex; align-items:center; justify-content:center; width:100%; padding:13px; background:#25D366; color:white; border-radius:50px; font-weight:700; text-decoration:none; margin-top:1rem; }
+        .common-grid { display:grid; grid-template-columns:repeat(auto-fit, minmax(250px,1fr)); gap:1.5rem; }
+        .common-card { border-radius:var(--radius-lg); overflow:hidden; height:280px; position:relative; }
+        .common-card img { width:100%; height:100%; object-fit:cover; }
+        .common-card-overlay { position:absolute; inset:0; background:linear-gradient(180deg, transparent 40%, rgba(6,15,26,0.85) 100%); display:flex; flex-direction:column; justify-content:flex-end; padding:1.5rem; color:white; }
+        .services-grid { display:grid; grid-template-columns:repeat(auto-fit, minmax(200px,1fr)); gap:2rem; text-align:center; }
+        .service-card { background:white; padding:2rem; border-radius:var(--radius-lg); transition:0.3s; }
+        .service-card:hover { transform:translateY(-4px); box-shadow:var(--shadow-md); }
+        .service-icon { font-size:2rem; color:var(--gold); margin-bottom:1rem; }
+        .contact-info { background:white; padding:2rem; border-radius:var(--radius-lg); display:flex; flex-direction:column; gap:1rem; max-width:600px; margin:0 auto; }
+        .floating-whatsapp { position:fixed; bottom:28px; right:28px; z-index:999; width:58px; height:58px; background:#25D366; border-radius:50%; display:flex; align-items:center; justify-content:center; color:white; font-size:1.6rem; box-shadow:0 8px 28px rgba(37,211,102,0.45); }
+        .lightbox { position:fixed; inset:0; background:rgba(0,0,0,0.92); display:flex; align-items:center; justify-content:center; opacity:0; pointer-events:none; transition:0.3s; z-index:2000; }
+        .lightbox.active { opacity:1; pointer-events:all; }
+        .lightbox img { max-width:90vw; max-height:85vh; border-radius:12px; }
+        footer { background:var(--navy-dark); color:white; padding:3rem 2rem; text-align:center; }
     </style>
 </head>
 <body>
@@ -49,7 +165,7 @@
             <div class="about-grid">
                 <div><img src="https://images.unsplash.com/photo-1566073771259-6a8506099945?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" style="width:100%; border-radius:20px;" alt="Otel"></div>
                 <div>
-                    <span class="section-label" style="color:var(--gold-dark);">Hakkımızda</span>
+                    <span style="color:var(--gold-dark); text-transform:uppercase; font-size:0.8rem;">Hakkımızda</span>
                     <h2 class="section-title">Zarafet ve Miras Hikayesi</h2>
                     <p style="color:var(--text-medium);">Canlı Galata semtinde yer alan otelimiz, İstanbul'un zengin kültürel dokusunu birinci sınıf misafirperverlikle birleştiriyor. Her köşe bir hikaye anlatır — özenle seçilmiş Osmanlı esintili dekorasyonumuzdan Boğaz'ın siluetini öpen panoramik çatı katımıza kadar.</p>
                 </div>
@@ -61,27 +177,148 @@
         <div class="section-inner">
             <div class="section-header">
                 <h2 class="section-title">İstanbul'un Kalbinde Konfor ve Zarafet</h2>
-                <p style="color:var(--text-medium);">İhtiyaçlarınıza özel olarak tasarlanmış, konforlu ve zarif bir şekilde döşenmiş odalarımızı keşfedin.</p>
+                <p style="color:var(--text-medium);">İhtiyaçlarınıza özel olarak tasarlanmış, konforlu ve zarif bir şekilde döşenmiş odalarımızı keşfedin. İster yalnız seyahat eden, ister çift, ister aile veya iş seyahatinde olun, unutulmaz bir konaklama için çeşitli konaklama seçenekleri sunuyoruz.</p>
             </div>
             <div class="rooms-grid" id="roomsContainer"></div>
         </div>
     </section>
 
-    <!-- Common areas, services, contact sections similarly translated -->
-    ...
+    <section class="section" id="common-areas" style="background:var(--navy); color:white;">
+        <div class="section-inner">
+            <div class="section-header">
+                <h2 class="section-title" style="color:white;">Ortak Alanlar</h2>
+                <p style="color:rgba(255,255,255,0.7);">Çatı katımızdan nefes kesici manzaraları deneyimleyin. Sabah kahvenizi yudumlayabileceğiniz, akşam içkinizi alabileceğiniz veya sadece büyüleyici şehir manzarasının keyfini çıkarabileceğiniz bir yer.</p>
+            </div>
+            <div class="common-grid" id="commonContainer"></div>
+        </div>
+    </section>
+
+    <section class="section" id="services">
+        <div class="section-inner">
+            <div class="section-header">
+                <h2 class="section-title">Olağanüstü Misafirperverlik Sizi Bekliyor</h2>
+            </div>
+            <div class="services-grid" id="servicesContainer"></div>
+        </div>
+    </section>
+
+    <section class="section" id="contact">
+        <div class="section-inner">
+            <div class="section-header">
+                <h2 class="section-title">Bizimle İletişime Geçin</h2>
+            </div>
+            <div class="contact-info" id="contactInfo"></div>
+        </div>
+    </section>
 
     <footer><p>© 2026 Galata İstanbul Oteli. Tüm hakları saklıdır. | İstanbul'da ❤️ ile tasarlandı.</p></footer>
 
-    <a href="https://wa.me/905400027000?text=Merhaba!%20Galata%20İstanbul%20Oteli'ndeki%20oda%20için%20rezervasyon%20yaptırmak%20istiyorum." class="floating-whatsapp"><i class="fa-brands fa-whatsapp"></i></a>
-    <div class="lightbox" id="lightbox" onclick="this.classList.remove('active')"><span>&times;</span><img src="" id="lightboxImg"></div>
+    <a href="https://wa.me/905400027000?text=Merhaba!%20Galata%20İstanbul%20Oteli'ndeki%20oda%20için%20rezervasyon%20yaptırmak%20istiyorum." class="floating-whatsapp" id="floatingWa"><i class="fa-brands fa-whatsapp"></i></a>
+    <div class="lightbox" id="lightbox" onclick="this.classList.remove('active')"><span style="position:absolute;top:20px;right:20px;color:white;font-size:2rem;cursor:pointer;">&times;</span><img src="" id="lightboxImg"></div>
 
     <script>
         const roomsData = [
             { name:"Jakuzili ve Deniz Manzaralı Romantik Süit Oda", desc:"Çiftler için özel jakuzi ve Boğaz'ın nefes kesici manzaralarına sahip lüks süit.", badge:"Premium", img:"https://images.unsplash.com/photo-1540518614846-7eded433c457?w=800" },
             { name:"Deniz Manzaralı Deluxe Çift veya İki Yataklı Oda", desc:"Unutulmaz bir konaklama için modern konforlarla donatılmış, çift veya iki yatak seçeneğiyle etkileyici deniz manzarası.", badge:"Deniz Manzara", img:"https://images.unsplash.com/photo-1582719508461-905c46875a8d?w=800" },
-            // ... all 10 rooms in Turkish
+            { name:"Kısmi Deniz Manzaralı Deluxe Üç veya Çift Kişilik Oda", desc:"Kısmi deniz manzaralı, üç kişiye kadar konaklama imkanı sunan, yatak kombinasyonları ve modern konforlar.", badge:"Üç Kişilik", img:"https://images.unsplash.com/photo-1590490360182-c33d57733427?w=800" },
+            { name:"Kısmi Deniz Manzaralı Deluxe Büyük Çift veya İki Yataklı Oda", desc:"Dinlendirici bir kaçamak için esnek yatak seçenekleri ve modern olanaklar sunan, kısmi deniz manzaralı geniş oda.", badge:"Geniş", img:"https://images.unsplash.com/photo-1578683010236-d716f9a3f461?w=800" },
+            { name:"Business Deluxe Çift veya İki Yataklı Oda", desc:"İş seyahatindekiler için ideal, çalışma masası ve modern olanaklarla donatılmış çift veya iki yataklı oda.", badge:"İş", img:"https://images.unsplash.com/photo-1591088398332-8a7791972843?w=800" },
+            { name:"Standart Aile Üç Kişilik Oda", desc:"Aileler için geniş, çift ve tek yatak kombinasyonuyla üç kişiyi ağırlayan konforlu bir aile odası.", badge:"Aile", img:"https://images.unsplash.com/photo-1595576508898-0ad5c879a061?w=800" },
+            { name:"Standart Çift veya İki Yataklı Oda", desc:"Rahat ve keyifli bir konaklama için tüm modern olanaklara sahip, çift veya iki yatak seçeneği sunan esnek oda.", badge:"Popüler", img:"https://images.unsplash.com/photo-1566665797739-1674de7a421a?w=800" },
+            { name:"Ekonomik Çift veya İki Yataklı Oda", desc:"Kaliteden ödün vermeden bütçe dostu konfor arayanlar için çift veya iki yatak seçeneği.", badge:"Ekonomik", img:"https://images.unsplash.com/photo-1590490359683-658d3d23f972?w=800" },
+            { name:"Standart Tek Kişilik Oda", desc:"Yalnız seyahat edenler için ideal, konforlu tek yatak ve huzurlu bir konaklama için temel olanaklar.", badge:"Tek", img:"https://images.unsplash.com/photo-1590490360182-c33d57733427?w=800" },
+            { name:"Standart Çift veya İki Yataklı Oda – Zemin Kat Kolay Erişim", desc:"Zemin katta elverişli konumda, kolay erişim ve modern konfor sunan çift veya iki yataklı oda.", badge:"Kolay Erişim", img:"https://images.unsplash.com/photo-1571896349842-33c89424de2d?w=800" }
         ];
-        // same rendering logic as English file
+
+        function renderRooms() {
+            const container = document.getElementById('roomsContainer');
+            container.innerHTML = roomsData.map((room, i) => `
+                <div class="room-card">
+                    <div class="room-card-image" onclick="openLightbox('${room.img}')">
+                        <img src="${room.img}" alt="${room.name}">
+                    </div>
+                    <div class="room-card-body">
+                        <h3 class="room-card-title">${room.name}</h3>
+                        <p class="room-card-desc">${room.desc}</p>
+                        <a href="#" class="room-card-book" data-roomidx="${i}">
+                            <i class="fa-brands fa-whatsapp"></i> Rezervasyon
+                        </a>
+                    </div>
+                </div>
+            `).join('');
+
+            document.querySelectorAll('.room-card-book').forEach(btn => {
+                btn.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    const idx = this.dataset.roomidx;
+                    const roomName = roomsData[idx].name;
+                    const msg = `Merhaba! Galata İstanbul Oteli'ndeki ${roomName} odası için rezervasyon yaptırmak istiyorum. Lütfen müsaitlik ve fiyat bilgisi verin.`;
+                    window.open(`https://wa.me/905400027000?text=${encodeURIComponent(msg)}`, '_blank');
+                });
+            });
+        }
+
+        function renderCommonAreas() {
+            const areas = [
+                { title:"🌅 Çatı Terası", desc:"Panoramik Boğaz ve Galata Kulesi manzarası", img:"https://images.unsplash.com/photo-1561501900-3701fa6a2224?w=600" },
+                { title:"🛋️ Lobide Dinlenme Alanı", desc:"Dinlenmek ve sosyalleşmek için zarif bir alan", img:"https://images.unsplash.com/photo-1520250497591-112f2f40a3f4?w=600" },
+                { title:"🍽️ Kahvaltı Salonu", desc:"Her gün taze Türk ve uluslararası lezzetler", img:"https://images.unsplash.com/photo-1414235077428-338989a2e8c0?w=600" }
+            ];
+            document.getElementById('commonContainer').innerHTML = areas.map(a => `
+                <div class="common-card">
+                    <img src="${a.img}" alt="${a.title}">
+                    <div class="common-card-overlay">
+                        <h3>${a.title}</h3>
+                        <p>${a.desc}</p>
+                    </div>
+                </div>
+            `).join('');
+        }
+
+        function renderServices() {
+            const services = [
+                { icon:"fa-bell-concierge", name:"7/24 Danışma", desc:"Günün her saati kişiselleştirilmiş yardım." },
+                { icon:"fa-wifi", name:"Ücretsiz Yüksek Hızlı WiFi", desc:"Tesis genelinde bağlantıda kalın." },
+                { icon:"fa-spa", name:"Spa ve Sağlık", desc:"Oda içi spa deneyimleriyle yenilenin." },
+                { icon:"fa-utensils", name:"Gurme Yemekler", desc:"Manzaralı enfes Türk mutfağı." },
+                { icon:"fa-shuttle-van", name:"Havalimanı Transferi", desc:"Lüks shuttle servisi mevcuttur." },
+                { icon:"fa-key", name:"Hızlı Giriş", desc:"Hızlı ve sorunsuz varış deneyimi." }
+            ];
+            document.getElementById('servicesContainer').innerHTML = services.map(s => `
+                <div class="service-card">
+                    <div class="service-icon"><i class="fa-solid ${s.icon}"></i></div>
+                    <h4>${s.name}</h4>
+                    <p style="color:var(--text-medium); font-size:0.9rem;">${s.desc}</p>
+                </div>
+            `).join('');
+        }
+
+        function renderContact() {
+            document.getElementById('contactInfo').innerHTML = `
+                <div><i class="fa-solid fa-phone"></i> <strong>Telefon:</strong> +90 54 000 27 000</div>
+                <div><i class="fa-solid fa-envelope"></i> <strong>E-posta:</strong> info@galataistanbulhotel.com</div>
+                <div><i class="fa-solid fa-location-dot"></i> <strong>Adres:</strong> Galata Mahallesi, Bereketzade Sokak No:12, Beyoğlu, İstanbul</div>
+            `;
+        }
+
+        function openLightbox(src) {
+            document.getElementById('lightboxImg').src = src;
+            document.getElementById('lightbox').classList.add('active');
+        }
+
+        document.getElementById('heroWhatsapp').addEventListener('click', function(e) {
+            e.preventDefault();
+            window.open('https://wa.me/905400027000?text=Merhaba!%20Galata%20İstanbul%20Oteli%20hakkında%20bilgi%20almak%20istiyorum.', '_blank');
+        });
+        document.getElementById('navBookBtn').addEventListener('click', function(e) {
+            e.preventDefault();
+            window.open('https://wa.me/905400027000?text=Merhaba!%20Galata%20İstanbul%20Oteli%20hakkında%20bilgi%20almak%20istiyorum.', '_blank');
+        });
+
+        renderRooms();
+        renderCommonAreas();
+        renderServices();
+        renderContact();
     </script>
 </body>
 </html>
