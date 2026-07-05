@@ -4,45 +4,142 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Galata Istanbul Hotel | Premium Luxury Accommodation</title>
-    <!-- Same fonts and styles as before (condensed for brevity, but fully functional) -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;0,800;1,400;1,500&family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400&family=Inter:wght@300;400;500;600;700&family=Lato:wght@300;400;700&family=Noto+Naskh+Arabic:wght@400;600;700&family=Vazirmatn:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <style>
-        /* Copy the full CSS from the previous premium design (all styles remain identical) */
         :root {
-            --gold: #c9a96e; --gold-light: #d4af37; --gold-dark: #a6842c; --gold-pale: #f5ecd7;
-            --navy: #0d1b2a; --navy-light: #1b2d45; --navy-dark: #060f1a; --cream: #faf7f2;
-            --white: #ffffff; --text-dark: #1a1a1a; --text-medium: #4a4a4a;
-            --shadow-sm: 0 2px 12px rgba(0,0,0,0.06); --shadow-md: 0 8px 32px rgba(0,0,0,0.10);
-            --shadow-lg: 0 20px 60px rgba(0,0,0,0.15); --shadow-xl: 0 30px 80px rgba(0,0,0,0.20);
-            --shadow-gold: 0 8px 32px rgba(201,169,110,0.25);
-            --border-subtle: 1px solid rgba(0,0,0,0.06); --radius-lg: 20px;
-            --transition-smooth: 0.4s cubic-bezier(0.4,0,0.2,1);
-            --font-display: 'Playfair Display','Cormorant Garamond',Georgia,serif;
-            --font-body: 'Lato','Inter',-apple-system,sans-serif;
+            --gold: #c9a96e;
+            --gold-light: #d4af37;
+            --gold-dark: #a6842c;
+            --gold-pale: #f5ecd7;
+            --navy: #0d1b2a;
+            --navy-light: #1b2d45;
+            --navy-dark: #060f1a;
+            --cream: #faf7f2;
+            --white: #ffffff;
+            --text-dark: #1a1a1a;
+            --text-medium: #4a4a4a;
+            --text-light: #7a7a7a;
+            --shadow-sm: 0 2px 12px rgba(0, 0, 0, 0.06);
+            --shadow-md: 0 8px 32px rgba(0, 0, 0, 0.10);
+            --shadow-lg: 0 20px 60px rgba(0, 0, 0, 0.15);
+            --shadow-xl: 0 30px 80px rgba(0, 0, 0, 0.20);
+            --shadow-gold: 0 8px 32px rgba(201, 169, 110, 0.25);
+            --border-subtle: 1px solid rgba(0, 0, 0, 0.06);
+            --radius-lg: 20px;
+            --transition-smooth: 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+            --font-display: 'Playfair Display', 'Cormorant Garamond', Georgia, serif;
+            --font-body: 'Lato', 'Inter', -apple-system, sans-serif;
         }
-        *{margin:0;padding:0;box-sizing:border-box;}
-        html{scroll-behavior:smooth;scroll-padding-top:80px;}
-        body{font-family:var(--font-body);background:var(--cream);color:var(--text-dark);line-height:1.7;overflow-x:hidden;}
-        [dir="rtl"] body{direction:rtl;text-align:right;font-family:'Vazirmatn','Noto Naskh Arabic',var(--font-body);}
-        /* ... include all other CSS rules from the original premium design ... */
+
+        * { margin:0; padding:0; box-sizing:border-box; }
+        html { scroll-behavior:smooth; scroll-padding-top:80px; }
+        body {
+            font-family: var(--font-body);
+            background: var(--cream);
+            color: var(--text-dark);
+            line-height: 1.7;
+            overflow-x: hidden;
+            -webkit-font-smoothing: antialiased;
+        }
+        ::-webkit-scrollbar { width: 8px; }
+        ::-webkit-scrollbar-track { background: #f0ece4; }
+        ::-webkit-scrollbar-thumb { background: var(--gold); border-radius: 20px; }
+        ::selection { background: var(--gold-pale); color: var(--navy); }
+
+        .navbar {
+            position: fixed; top:0; left:0; width:100%; z-index:1000;
+            background: rgba(13,27,42,0.88); backdrop-filter: blur(24px);
+            border-bottom: 1px solid rgba(201,169,110,0.2); padding: 0 2rem;
+        }
+        .navbar-inner {
+            max-width:1300px; margin:0 auto; display:flex; align-items:center;
+            justify-content:space-between; height:76px;
+        }
+        .nav-logo {
+            font-family:var(--font-display); font-size:1.55rem; font-weight:700;
+            color:var(--white); text-decoration:none; display:flex; align-items:center; gap:10px;
+        }
+        .nav-logo-icon {
+            width:42px; height:42px; border-radius:50%;
+            background: linear-gradient(135deg, var(--gold-light), var(--gold-dark));
+            display:flex; align-items:center; justify-content:center;
+            font-size:1.1rem; color:var(--navy-dark);
+        }
+        .nav-links { display:flex; list-style:none; gap:1.8rem; align-items:center; }
+        .nav-links a {
+            text-decoration:none; color:rgba(255,255,255,0.85); font-weight:500;
+            font-size:0.88rem; letter-spacing:0.04em; text-transform:uppercase;
+            position:relative; padding:6px 0; transition:0.3s;
+        }
+        .nav-links a::after { content:''; position:absolute; bottom:0; left:0; width:0; height:1.5px; background:var(--gold-light); transition:width 0.4s; }
+        .nav-links a:hover { color:var(--gold-light); }
+        .nav-links a:hover::after { width:100%; }
+        .nav-book-btn {
+            background:linear-gradient(135deg, var(--gold-light), var(--gold-dark));
+            color:var(--navy-dark)!important; padding:10px 22px!important;
+            border-radius:50px; font-weight:700!important; box-shadow:var(--shadow-gold);
+            font-size:0.8rem!important; text-transform:uppercase;
+        }
+
+        .hero {
+            position:relative; min-height:100vh; display:flex; align-items:center;
+            justify-content:center; overflow:hidden; background:var(--navy-dark);
+        }
+        .hero-bg img { width:100%; height:100%; object-fit:cover; opacity:0.45; filter:brightness(0.55); position:absolute; inset:0; }
+        .hero-overlay { position:absolute; inset:0; background:linear-gradient(180deg, rgba(6,15,26,0.55) 0%, rgba(13,27,42,0.7) 40%, rgba(6,15,26,0.9) 100%); }
+        .hero-content { position:relative; z-index:2; text-align:center; padding:2rem; max-width:850px; }
+        .hero-badge { display:inline-block; padding:8px 22px; border:1px solid var(--gold-light); border-radius:50px; color:var(--gold-light); font-size:0.8rem; letter-spacing:0.12em; margin-bottom:2rem; }
+        .hero-title { font-family:var(--font-display); font-size:clamp(3rem, 6vw, 5.5rem); font-weight:700; color:white; line-height:1.1; }
+        .hero-title span { color:var(--gold-light); font-style:italic; }
+        .hero-subtitle { color:rgba(255,255,255,0.75); margin-bottom:2.5rem; font-size:1.1rem; }
+        .btn { display:inline-flex; align-items:center; gap:10px; padding:15px 34px; border-radius:50px; font-weight:600; text-decoration:none; transition:0.3s; text-transform:uppercase; margin:0 6px; }
+        .btn-primary { background:var(--gold-light); color:var(--navy-dark); box-shadow:var(--shadow-gold); }
+        .btn-outline { background:transparent; color:white; border:2px solid rgba(255,255,255,0.5); }
+        .section { padding:5rem 2rem; }
+        .section-inner { max-width:1300px; margin:0 auto; }
+        .section-header { text-align:center; margin-bottom:3rem; }
+        .section-title { font-family:var(--font-display); font-size:2.5rem; color:var(--navy); }
+        .about-grid { display:grid; grid-template-columns:1fr 1fr; gap:3rem; align-items:center; }
+        @media (max-width:768px){ .about-grid { grid-template-columns:1fr; } }
+        .rooms-grid { display:grid; grid-template-columns:repeat(auto-fill, minmax(350px,1fr)); gap:2rem; }
+        .room-card { background:white; border-radius:var(--radius-lg); overflow:hidden; box-shadow:var(--shadow-sm); transition:0.3s; }
+        .room-card:hover { transform:translateY(-6px); box-shadow:var(--shadow-xl); }
+        .room-card-image { height:250px; overflow:hidden; cursor:pointer; position:relative; }
+        .room-card-image img { width:100%; height:100%; object-fit:cover; transition:0.7s; }
+        .room-card:hover .room-card-image img { transform:scale(1.08); }
+        .room-card-body { padding:1.5rem; }
+        .room-card-title { font-family:var(--font-display); font-size:1.3rem; color:var(--navy); margin-bottom:0.5rem; }
+        .room-card-desc { color:var(--text-medium); margin-bottom:1rem; }
+        .room-card-book { display:inline-flex; align-items:center; justify-content:center; width:100%; padding:13px; background:#25D366; color:white; border-radius:50px; font-weight:700; text-decoration:none; margin-top:1rem; }
+        .common-grid { display:grid; grid-template-columns:repeat(auto-fit, minmax(250px,1fr)); gap:1.5rem; }
+        .common-card { border-radius:var(--radius-lg); overflow:hidden; height:280px; position:relative; }
+        .common-card img { width:100%; height:100%; object-fit:cover; }
+        .common-card-overlay { position:absolute; inset:0; background:linear-gradient(180deg, transparent 40%, rgba(6,15,26,0.85) 100%); display:flex; flex-direction:column; justify-content:flex-end; padding:1.5rem; color:white; }
+        .services-grid { display:grid; grid-template-columns:repeat(auto-fit, minmax(200px,1fr)); gap:2rem; text-align:center; }
+        .service-card { background:white; padding:2rem; border-radius:var(--radius-lg); transition:0.3s; }
+        .service-card:hover { transform:translateY(-4px); box-shadow:var(--shadow-md); }
+        .service-icon { font-size:2rem; color:var(--gold); margin-bottom:1rem; }
+        .contact-info { background:white; padding:2rem; border-radius:var(--radius-lg); display:flex; flex-direction:column; gap:1rem; max-width:600px; margin:0 auto; }
+        .floating-whatsapp { position:fixed; bottom:28px; right:28px; z-index:999; width:58px; height:58px; background:#25D366; border-radius:50%; display:flex; align-items:center; justify-content:center; color:white; font-size:1.6rem; box-shadow:0 8px 28px rgba(37,211,102,0.45); }
+        .lightbox { position:fixed; inset:0; background:rgba(0,0,0,0.92); display:flex; align-items:center; justify-content:center; opacity:0; pointer-events:none; transition:0.3s; z-index:2000; }
+        .lightbox.active { opacity:1; pointer-events:all; }
+        .lightbox img { max-width:90vw; max-height:85vh; border-radius:12px; }
+        footer { background:var(--navy-dark); color:white; padding:3rem 2rem; text-align:center; }
     </style>
     <script>
-        // Redirect to language subfolder if browser language is not English
+        // Redirect to /tr/ if browser language is Turkish
         (function() {
-            const supported = ['tr','ar','fa','ru','fr'];
             const userLang = (navigator.language || navigator.userLanguage).split('-')[0].toLowerCase();
-            // Only redirect if not English and not already inside a subfolder
-            if (supported.includes(userLang) && window.location.pathname === '/index.html' || window.location.pathname === '/') {
-                window.location.replace('./' + userLang + '/index.html');
+            if (userLang === 'tr' && !window.location.pathname.includes('/tr/')) {
+                window.location.replace('./tr/index.html');
             }
         })();
     </script>
 </head>
 <body>
-    <!-- The complete English site (same as before) -->
     <nav class="navbar" id="navbar">
         <div class="navbar-inner">
             <a href="#home" class="nav-logo"><div class="nav-logo-icon"><i class="fa-solid fa-crown"></i></div>Galata Istanbul</a>
@@ -58,24 +155,179 @@
         </div>
     </nav>
 
-    <section class="hero" id="home"> ... </section>
-    <section class="section" id="about"> ... </section>
-    <section class="section" id="rooms"> ... </section>
-    <section class="section" id="common-areas" style="background:var(--navy); color:white;"> ... </section>
-    <section class="section" id="services"> ... </section>
-    <section class="section" id="contact"> ... </section>
-    <footer> ... </footer>
+    <section class="hero" id="home">
+        <div class="hero-bg"><img src="https://images.unsplash.com/photo-1524231757912-21f4fe3a7200?ixlib=rb-4.0.3&auto=format&fit=crop&w=1920&q=80" alt="Istanbul"></div>
+        <div class="hero-overlay"></div>
+        <div class="hero-content">
+            <div class="hero-badge">✧ Boutique Luxury Hotel ✧</div>
+            <h1 class="hero-title"><span>Galata</span> <span>Istanbul</span> <span>Hotel</span></h1>
+            <p class="hero-subtitle">Where timeless Ottoman elegance meets contemporary luxury. Experience breathtaking Bosphorus views from the heart of historic Galata.</p>
+            <div>
+                <a href="#rooms" class="btn btn-primary">Explore Rooms</a>
+                <a href="#" class="btn btn-outline" id="heroWhatsapp"><i class="fa-brands fa-whatsapp"></i> WhatsApp Booking</a>
+            </div>
+        </div>
+    </section>
+
+    <section class="section" id="about">
+        <div class="section-inner">
+            <div class="about-grid">
+                <div><img src="https://images.unsplash.com/photo-1566073771259-6a8506099945?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" style="width:100%; border-radius:20px;" alt="Hotel exterior"></div>
+                <div>
+                    <span style="color:var(--gold-dark); text-transform:uppercase; font-size:0.8rem;">About Us</span>
+                    <h2 class="section-title">A Story of Elegance & Heritage</h2>
+                    <p style="color:var(--text-medium);">Nestled in the vibrant Galata district, our hotel blends the rich cultural tapestry of Istanbul with world-class hospitality. Every corner tells a story — from our handpicked Ottoman-inspired décor to the panoramic rooftop that kisses the Bosphorus skyline.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="section" id="rooms">
+        <div class="section-inner">
+            <div class="section-header">
+                <h2 class="section-title">Comfort and Elegance in the Heart of Istanbul</h2>
+                <p style="color:var(--text-medium);">Discover a range of comfortable and elegantly designed rooms at Galata Istanbul Hotel, each tailored to meet your specific needs. Whether you are a solo traveler, a couple, a family, or on a business trip, we offer a variety of accommodations to ensure a memorable stay.</p>
+            </div>
+            <div class="rooms-grid" id="roomsContainer"></div>
+        </div>
+    </section>
+
+    <section class="section" id="common-areas" style="background:var(--navy); color:white;">
+        <div class="section-inner">
+            <div class="section-header">
+                <h2 class="section-title" style="color:white;">Common Areas</h2>
+                <p style="color:rgba(255,255,255,0.7);">Experience breathtaking views from our rooftop. Where you can enjoy a morning coffee, an evening drink, or simply take in the stunning cityscape.</p>
+            </div>
+            <div class="common-grid" id="commonContainer"></div>
+        </div>
+    </section>
+
+    <section class="section" id="services">
+        <div class="section-inner">
+            <div class="section-header">
+                <h2 class="section-title">Exceptional Hospitality Awaits</h2>
+            </div>
+            <div class="services-grid" id="servicesContainer"></div>
+        </div>
+    </section>
+
+    <section class="section" id="contact">
+        <div class="section-inner">
+            <div class="section-header">
+                <h2 class="section-title">Get in Touch</h2>
+            </div>
+            <div class="contact-info" id="contactInfo"></div>
+        </div>
+    </section>
+
+    <footer><p>© 2026 Galata Istanbul Hotel. All rights reserved. | Designed with ❤️ in Istanbul.</p></footer>
 
     <a href="https://wa.me/905400027000?text=Hello!%20I'm%20interested%20in%20booking%20a%20room%20at%20Galata%20Istanbul%20Hotel." class="floating-whatsapp" id="floatingWa"><i class="fa-brands fa-whatsapp"></i></a>
-    <div class="lightbox" id="lightbox" onclick="this.classList.remove('active')"><span>&times;</span><img src="" id="lightboxImg"></div>
+    <div class="lightbox" id="lightbox" onclick="this.classList.remove('active')"><span style="position:absolute;top:20px;right:20px;color:white;font-size:2rem;cursor:pointer;">&times;</span><img src="" id="lightboxImg"></div>
 
     <script>
-        // Room rendering & WhatsApp logic (same as before) ...
         const roomsData = [
-            { name:"Romantic Suite Room With Jacuzzi & Sea View", desc:"...", badge:"Premium", img:"https://images.unsplash.com/photo-1540518614846-7eded433c457?w=800" },
-            // ... all 10 rooms
+            { name:"Romantic Suite Room With Jacuzzi & Sea View", desc:"Luxurious suite perfect for couples, featuring a private Jacuzzi and breathtaking sea views over the Bosphorus.", badge:"Premium", img:"https://images.unsplash.com/photo-1540518614846-7eded433c457?w=800" },
+            { name:"Deluxe Double or Twin Room With Sea View", desc:"Experience stunning sea views with the choice of double or twin beds, equipped with modern comforts for an unforgettable stay.", badge:"Sea View", img:"https://images.unsplash.com/photo-1582719508461-905c46875a8d?w=800" },
+            { name:"Deluxe Triple or Double Room with Partial Sea View", desc:"Accommodate up to three guests with partial sea views, featuring a combination of beds and modern comforts.", badge:"Triple", img:"https://images.unsplash.com/photo-1590490360182-c33d57733427?w=800" },
+            { name:"Deluxe Big Double or Twin Room with Partial Sea View", desc:"Spacious room with partial sea views, offering the flexibility of double or twin beds and modern amenities for a relaxing retreat.", badge:"Spacious", img:"https://images.unsplash.com/photo-1578683010236-d716f9a3f461?w=800" },
+            { name:"Business Deluxe Double or Twin Room", desc:"Perfect for business travelers, offering double or twin beds, a dedicated work desk, and modern amenities for productivity.", badge:"Business", img:"https://images.unsplash.com/photo-1591088398332-8a7791972843?w=800" },
+            { name:"Standard Family Triple Room", desc:"Spacious room for families, accommodating three guests with a combination of double and single beds — perfect for a comfortable family getaway.", badge:"Family", img:"https://images.unsplash.com/photo-1595576508898-0ad5c879a061?w=800" },
+            { name:"Standard Double or Twin Room", desc:"Flexible and comfortable with a choice of double or twin beds, featuring all modern amenities for a restful and enjoyable stay.", badge:"Popular", img:"https://images.unsplash.com/photo-1566665797739-1674de7a421a?w=800" },
+            { name:"Economy Double or Twin Room", desc:"Affordable comfort with a choice of double or twin beds, perfect for budget-conscious travelers without compromising on quality.", badge:"Budget", img:"https://images.unsplash.com/photo-1590490359683-658d3d23f972?w=800" },
+            { name:"Standard Single Room", desc:"Ideal for solo travelers, offering a comfortable single bed and essential amenities for a restful and peaceful stay.", badge:"Solo", img:"https://images.unsplash.com/photo-1590490360182-c33d57733427?w=800" },
+            { name:"Standard Double or Twin Room – Ground Floor Easy Access", desc:"Enjoy easy access and comfort with a choice of double or twin beds and modern amenities — conveniently located on the ground floor.", badge:"Easy Access", img:"https://images.unsplash.com/photo-1571896349842-33c89424de2d?w=800" }
         ];
-        // Populate rooms, attach WhatsApp booking, etc.
+
+        function renderRooms() {
+            const container = document.getElementById('roomsContainer');
+            container.innerHTML = roomsData.map((room, i) => `
+                <div class="room-card">
+                    <div class="room-card-image" onclick="openLightbox('${room.img}')">
+                        <img src="${room.img}" alt="${room.name}">
+                    </div>
+                    <div class="room-card-body">
+                        <h3 class="room-card-title">${room.name}</h3>
+                        <p class="room-card-desc">${room.desc}</p>
+                        <a href="#" class="room-card-book" data-roomidx="${i}">
+                            <i class="fa-brands fa-whatsapp"></i> Book Now
+                        </a>
+                    </div>
+                </div>
+            `).join('');
+
+            document.querySelectorAll('.room-card-book').forEach(btn => {
+                btn.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    const idx = this.dataset.roomidx;
+                    const roomName = roomsData[idx].name;
+                    const msg = `Hello! I'm interested in booking the ${roomName} at Galata Istanbul Hotel. Please share availability and rates.`;
+                    window.open(`https://wa.me/905400027000?text=${encodeURIComponent(msg)}`, '_blank');
+                });
+            });
+        }
+
+        function renderCommonAreas() {
+            const areas = [
+                { title:"🌅 Rooftop Terrace", desc:"Panoramic Bosphorus & Galata Tower views", img:"https://images.unsplash.com/photo-1561501900-3701fa6a2224?w=600" },
+                { title:"🛋️ Lobby Lounge", desc:"Elegant space to unwind and socialize", img:"https://images.unsplash.com/photo-1520250497591-112f2f40a3f4?w=600" },
+                { title:"🍽️ Breakfast Hall", desc:"Fresh Turkish & international delicacies daily", img:"https://images.unsplash.com/photo-1414235077428-338989a2e8c0?w=600" }
+            ];
+            document.getElementById('commonContainer').innerHTML = areas.map(a => `
+                <div class="common-card">
+                    <img src="${a.img}" alt="${a.title}">
+                    <div class="common-card-overlay">
+                        <h3>${a.title}</h3>
+                        <p>${a.desc}</p>
+                    </div>
+                </div>
+            `).join('');
+        }
+
+        function renderServices() {
+            const services = [
+                { icon:"fa-bell-concierge", name:"24/7 Concierge", desc:"Personalized assistance around the clock." },
+                { icon:"fa-wifi", name:"Free High-Speed WiFi", desc:"Stay connected throughout the property." },
+                { icon:"fa-spa", name:"Spa & Wellness", desc:"Rejuvenate with in-room spa experiences." },
+                { icon:"fa-utensils", name:"Gourmet Dining", desc:"Exquisite Turkish cuisine with views." },
+                { icon:"fa-shuttle-van", name:"Airport Transfer", desc:"Luxury shuttle service available." },
+                { icon:"fa-key", name:"Express Check-in", desc:"Swift and smooth arrival experience." }
+            ];
+            document.getElementById('servicesContainer').innerHTML = services.map(s => `
+                <div class="service-card">
+                    <div class="service-icon"><i class="fa-solid ${s.icon}"></i></div>
+                    <h4>${s.name}</h4>
+                    <p style="color:var(--text-medium); font-size:0.9rem;">${s.desc}</p>
+                </div>
+            `).join('');
+        }
+
+        function renderContact() {
+            document.getElementById('contactInfo').innerHTML = `
+                <div><i class="fa-solid fa-phone"></i> <strong>Phone:</strong> +90 54 000 27 000</div>
+                <div><i class="fa-solid fa-envelope"></i> <strong>Email:</strong> info@galataistanbulhotel.com</div>
+                <div><i class="fa-solid fa-location-dot"></i> <strong>Address:</strong> Galata Mahallesi, Bereketzade Sokak No:12, Beyoğlu, Istanbul</div>
+            `;
+        }
+
+        function openLightbox(src) {
+            document.getElementById('lightboxImg').src = src;
+            document.getElementById('lightbox').classList.add('active');
+        }
+
+        document.getElementById('heroWhatsapp').addEventListener('click', function(e) {
+            e.preventDefault();
+            window.open('https://wa.me/905400027000?text=Hello!%20I%20am%20interested%20in%20booking%20a%20room%20at%20Galata%20Istanbul%20Hotel.', '_blank');
+        });
+        document.getElementById('navBookBtn').addEventListener('click', function(e) {
+            e.preventDefault();
+            window.open('https://wa.me/905400027000?text=Hello!%20I%20am%20interested%20in%20booking%20a%20room%20at%20Galata%20Istanbul%20Hotel.', '_blank');
+        });
+
+        renderRooms();
+        renderCommonAreas();
+        renderServices();
+        renderContact();
     </script>
 </body>
 </html>
